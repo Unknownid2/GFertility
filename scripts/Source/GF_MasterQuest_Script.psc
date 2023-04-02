@@ -1,48 +1,17 @@
-Scriptname GF_Master_S extends Quest  
-;Attach to GF_Master_Quest
+Scriptname GF_MasterQuest_Script extends Quest  
+{Goddess of Fertility main script}
 
-    ;/// Propeties ///;
-    SLIF_Inflate property slif auto ;unused
-    GF_Settings_S property settings auto
+;/// Imports ///;
+    import SLIF_Main
+
+;/// Propeties ///;
+    GF_Settings_Script Property Settings Auto
     
-    ;/// Vars ///;
+;/// Variables ///;
     ;/.../;
-    
-    ;Start
-    event OnInit()
 
-        Debug.Notification("Build = " + settings.build) ;FIXME: always print 0
+;/// Functions ///;
+    ;/.../;
 
-        if (Game.GetModByName("SexLab Inflation Framework.esp") != 255)
-
-            GFStart()
-
-        else
-
-            Debug.Notification("GF: Slif not found!, stopping...")
-            ;TODO: stop quest script
-
-        endIf
-        
-    endEvent
-
-    function GFStart()
-
-        Debug.Notification("GF Starts...")
-        ;TODO: Master behaviour...
-
-    endFunction
-
-    bool function isValidFemale(Actor akActor)
-
-        if (SLIF_Main.GetGender(akActor) == 1)
-
-            return true
-
-        else
-
-            return false
-
-        endif
-
-    endFunction
+;/// Events ///;
+    ;/.../;
